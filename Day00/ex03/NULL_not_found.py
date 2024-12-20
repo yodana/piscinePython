@@ -1,13 +1,11 @@
 def NULL_not_found(object: any) -> int:
+    #print("type:" + str(type(object)) + str(bool(object)))
     dict_null = {"Nothing : " : None, "Chesse : " : float, "Zero : " : int, "Empty : " : str, "Fake : " : bool}
-    for key in dict_null:
-        print(dict_null[key])
-        if dict_null[key] == type(object) or object == None:
-            if ((type(object) != str) or (type(object) == str and object == "")):
+    if bool(object) == False:
+        for key in dict_null:
+            if dict_null[key] == type(object) or object == None:
                 print(key + str(object) + " " + str(type(object)))
-            else:
-                print("Type not found")
-            return 42
+                return 42
     print("Type not found")
     return 42
 
